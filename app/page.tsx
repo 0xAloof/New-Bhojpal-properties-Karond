@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import {
   Star,
@@ -84,11 +85,14 @@ export default function HomePage() {
         >
           {/* Full-screen Background Image + Dark Moody Overlay */}
           <div className="absolute inset-0 z-0 overflow-hidden">
-            <img
+            <Image
               src={HERO_IMAGE_BY_AREA[selectedArea]}
               alt={`Featured Real Estate in ${selectedArea} - Sample Property`}
+              fill
+              priority
+              sizes="100vw"
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover scale-105 transition-transform duration-[1200ms] ease-out"
+              className="object-cover scale-105 transition-transform duration-[1200ms] ease-out"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#0F172A]/80 to-[#0F172A]/95" />
           </div>

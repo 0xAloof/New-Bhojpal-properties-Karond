@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import {
   MapPin,
@@ -19,7 +20,6 @@ import {
   SERVICE_CATALOG,
   ServiceOffering,
   ServiceType,
-  WHATSAPP_NUMBER,
   buildServiceInquiryText,
   buildServiceWhatsAppUrl,
 } from '@/lib/property-router';
@@ -176,11 +176,13 @@ export default function AreaWhatsAppRouter({
                 <div className="space-y-5">
                   {/* Realistic Indian Real Estate Imagery with rounded-2xl & 1.2s Ken Burns Hover Scale */}
                   <div className="relative aspect-[4/3] w-full bg-[#0F172A] overflow-hidden rounded-2xl">
-                    <img
+                    <Image
                       src={card.imageUrl}
                       alt={`${card.service} in ${selectedArea} - ${card.imageLabel}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105 hover:scale-105"
+                      className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105 hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
                     <div className="absolute top-3 left-3 bg-[#0F172A]/90 backdrop-blur-xs text-white px-3 py-1 rounded-2xl text-xs font-semibold tracking-wide">
