@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-ivory: #F9FAFB;
+    --bg-navy: #0F172A;
+    --cta-whatsapp: #25D366;
+    --cta-call: #000000;
+    --accent-gold: #F59E0B;
+    --font-fraunces: 'Fraunces', Georgia, Cambria, 'Times New Roman', serif;
+    --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F9FAFB;
+    color: #0F172A;
+    font-family: var(--font-inter);
+  }
+
+  h1, h2, h3, h4, .font-serif-heading {
+    font-family: var(--font-fraunces);
+  }
+}
